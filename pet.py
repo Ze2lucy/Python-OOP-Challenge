@@ -50,3 +50,42 @@ class Pet:
                 print(f"{i}. {trick}")
         else:
             print("No tricks learned yet.")
+
+    def get_status(self):
+        print("\n--- Pet Status ---")
+        print(f"Name: {self.name}")
+        print(f"Type: {self.type}")
+        print(f"Toys: {self.toys}")
+        print(f"Hunger: {self.hunger}")
+        print(f"Energy: {self.energy}")
+        print(f"Happiness: {self.happiness}")
+        print(f"Tricks: {', '.join(self.tricks) if self.tricks else 'None'}")
+        print("------------------\n")
+
+
+def create_pet():
+    pet_type = ""
+    valid_types = ["cat", "dog", "fish"]
+
+    while pet_type not in valid_types:
+        print("Choose a pet type (cat, dog, fish):")
+        pet_type = input("> ").lower()
+
+    name = input(f"What would you like to name your {pet_type}? ")
+
+    # You can set default values here or ask the user for them
+    return Pet(name=name, pet_type=pet_type)
+
+
+def main():
+    pet = create_pet()
+
+    menu = {
+        "E": ("Feed your pet", pet.eat),
+        "S": ("Let your pet sleep", pet.sleep),
+        "P": ("Play with your pet", pet.play),
+        "T": ("Train a new trick", lambda: pet.train(input("Enter a trick: "))),
+        "K": ("Show learned tricks", pet.show_tricks),
+        "G": ("Get pet status", pet.get_status),
+        "Q": ("Quit", None)
+    }
