@@ -37,8 +37,9 @@ class Pet:
             print(f"{self.name} is too tired to play. Let them rest!")
 
     def train(self, trick):
-        if trick in self.tricks:
-            print(f"{self.name} already knows how to {trick}!")
+        if trick.strip():
+            if trick in self.tricks:
+                print(f"{self.name} already knows how to {trick}!")
         else:
             self.tricks.append(trick)
             print(f"{self.name} learned a new trick: {trick}!")
@@ -73,7 +74,6 @@ def create_pet():
 
     name = input(f"What would you like to name your {pet_type}? ")
 
-    # You can set default values here or ask the user for them
     return Pet(name=name, pet_type=pet_type)
 
 
@@ -88,6 +88,7 @@ def main():
         "K": ("Show learned tricks", pet.show_tricks),
         "G": ("Get pet status", pet.get_status),
         "Q": ("Quit", None)
+
     }
 
 
