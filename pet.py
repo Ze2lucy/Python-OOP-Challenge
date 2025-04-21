@@ -89,3 +89,6 @@ def main():
         "G": ("Get pet status", pet.get_status),
         "Q": ("Quit", None)
     }
+
+
+main()
