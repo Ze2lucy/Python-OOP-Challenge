@@ -3,8 +3,8 @@ Welcome to this week's Python challenge! 🎉
 
 In this challenge, you’ll be creating a virtual pet using Object-Oriented Programming concepts in Python. This fun project will help you practice how to use classes, attributes, methods, and constructors.
 
- Empty heading
- Empty heading
+Empty heading
+Empty heading
 🧠 Objective
 Create a class called Pet with the following:
 
@@ -21,11 +21,6 @@ get_status(): prints the current state of the pet.
 Bonus 🎯
 Add a method train(trick) that teaches your pet a new trick and stores it in a list.
 Add a method show_tricks() that prints all learned tricks.
- 
-
- 
-
- 
 
 📝 How to Complete
 Fork or clone this repo: https://github.com/Evans-mutuku/OOP-Challenge
